@@ -18,4 +18,4 @@ printf 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_coden
 add-apt-repository ppa:mozillateam/ppa -y
 apt update && apt upgrade -y && apt update && apt dist-upgrade -y
 
-apt install firefox firefox-locale-fr gnome-shell xul-ext-ubufox
+apt install firefox firefox-locale-fr gnome-shell gnome-shell-extensions xul-ext-ubufox
