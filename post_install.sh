@@ -37,7 +37,7 @@ sudo snap remove --purge bare
 sudo snap remove --purge core20
 sudo snap remove --purge snapd
 # On vire tout !
-sudo apt autoremove --purge snapd
+sudo apt autoremove --purge -y snapd
 # On supprime le cache des paquet snap
 sudo rm -rf /var/cache/snapd/
 rm -rf ~/snap
