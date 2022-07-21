@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Création de dossier  de A à Z
+WorkingDir="$PWD/"
+Number_Dir="$(echo $@ | wc -w)"
+if [[ -z $2 ]]; then
+  mkdir -p "$WorkingDir/$1/"{A..Z}
+  notify-send "Les Dossiers ont été créé dans $1"
+else
+for Liste_Dossier in $@; do
+  mkdir -p "$WorkingDir/$Liste_Dossier/"{A..Z}
+done
+notify-send "Les sous-dossiers ont créé dans $Number_Dir Dossiers"
+fi
