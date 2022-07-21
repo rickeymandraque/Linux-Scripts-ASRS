@@ -43,9 +43,9 @@ sudo rm -rf /var/cache/snapd/
 rm -rf ~/snap
 
 # On créer des Fichiers pour bloquer completement les snaps
-sudo printf "Package: snapd\nPin: release a=*\nPin-Priority: -10\n" > /etc/apt/preferences.d/nosnap
-sudo printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1\n\nPackage: *\nPin: release o=LP-PPA-mozillateam\nPin-Priority: 99" > /etc/apt/preferences.d/firefox-for-nosnaps
-sudo printf 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' >> /etc/apt/apt.conf.d/50unattended-upgrades-firefox
+sudo sh $(printf "Package: snapd\nPin: release a=*\nPin-Priority: -10\n" > /etc/apt/preferences.d/nosnap)
+sudo sh $(printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1\n\nPackage: *\nPin: release o=LP-PPA-mozillateam\nPin-Priority: 99" > /etc/apt/preferences.d/firefox-for-nosnaps)
+sudo sh $(printf 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' > /etc/apt/apt.conf.d/50unattended-upgrades-firefox)
 # On ajoute les dépots supplémentaire.
 sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo add-apt-repository ppa:astroncia/iptv -y
